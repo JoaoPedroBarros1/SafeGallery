@@ -1,4 +1,9 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# Default ignored files
+.idea/
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
 
 # dependencies
 node_modules/
