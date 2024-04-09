@@ -1,27 +1,19 @@
 import React from "react";
-import { View, Image, Pressable } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import {faHouse, faImages, faRightFromBracket} from "@fortawesome/free-solid-svg-icons";
+import {Appbar} from "react-native-paper";
 
-export default function HeaderComponent(){
+
+export default function HeaderComponent({ navigation }){
     return (
         <>
-            <View style={css.divHeader}>
-                <View>
-                    <Pressable style={css.pressGaleria} onPress={() => navigation.navigate("#tela de galeria#")}>
-                        <FontAwesomeIcon icon="fa-solid fa-house"/>
-                    </Pressable>
-                </View>
-                <View>
-                    <Pressable style={css.pressColecao} onPress={() => navigation.navigate("#tela de coleções#")}>
-                        <FontAwesomeIcon icon="fa-solid fa-images"/>
-                    </Pressable>
-                </View>
-                <View>
-                    <Pressable style={css.pressLogout} onPress={() => navigation.navigate("#tela inicial - logout#")}>
-                        <FontAwesomeIcon icon="fa-solid fa-right-from-bracket"/>
-                    </Pressable>
-                </View>
-            </View>
+            <Appbar.Header>
+                <Appbar.Action icon={"home"} onPress={() => {navigation.navigate("Gallery")}} />
+                <Appbar.Action icon={"image-multiple"} onPress={() => {navigation.navigate("Collections")}} />
+                <Appbar.Action icon={"logout"} onPress={() => {navigation.navigate("Lockscreen")}} />
+            </Appbar.Header>
         </>
+
     )
 }

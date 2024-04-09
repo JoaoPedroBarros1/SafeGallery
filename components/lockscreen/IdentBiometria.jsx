@@ -1,10 +1,10 @@
 import React from 'react';
+import * as LocalAuthentication from 'expo-local-authentication';
 
-export default  function IdentBiometria(){
+export default async function IdentBiometria(){
 
-    const checarBiometria = async () => {
-        const hasHardware = await Autenticacao.hasHardwareAsync();
-        const isEnrolled = await Autenticacao.isEnrolledAsync();
+        const hasHardware = await LocalAuthentication.hasHardwareAsync();
+        const isEnrolled = await LocalAuthentication.isEnrolledAsync();
 
         if (!hasHardware) {
             alert ('Dispositivo não possui biometria, compra oto ai irmão.')
@@ -13,17 +13,8 @@ export default  function IdentBiometria(){
 
         if (!isEnrolled){
             alert('Biometria não está configurada no dispositivo.')
+            return false;
         }
 
         return true;
-    }
-
-
-
-
-
-
-
-
-
 }
