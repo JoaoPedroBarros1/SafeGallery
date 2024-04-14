@@ -1,5 +1,5 @@
 import React from "react";
-import { View, ScrollView } from 'react-native';
+import {ScrollView, SafeAreaView} from 'react-native';
 
 import HeaderComponent from "../components/HeaderComponent";
 
@@ -11,7 +11,7 @@ import AreaButtons from "../components/gallery/AreaButtons";
 
 export default function GalleryScreen({ navigation }){
     return (
-        <>
+        <SafeAreaView>
             <ScrollView>
                  <HeaderComponent navigation={navigation} />
                  <ContainerImages/>
@@ -19,6 +19,6 @@ export default function GalleryScreen({ navigation }){
                  <AreaButtons/>
             </ScrollView>
 
-        </>
+        </SafeAreaView>
     )
 }

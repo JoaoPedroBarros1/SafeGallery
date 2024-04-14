@@ -1,4 +1,4 @@
-import {View, Button, StyleSheet, Pressable} from "react-native";
+import {View, SafeAreaView, Pressable} from "react-native";
 
 import AutentUser from "../components/lockscreen/AutentUser";
 import  {styles} from "../styles/style";
@@ -10,8 +10,8 @@ export default function LockScreen({ navigation }) {
     };
 
     return (
-        <View style={styles.button}>
+        <SafeAreaView style={styles.button}>
             <Pressable style={styles.buttonText} onPress={verificarAutenticacao} > Entrar</Pressable>
-        </View>
+        </SafeAreaView>
     );
 }
