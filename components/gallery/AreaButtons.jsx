@@ -5,11 +5,9 @@ import ButtonGaleria from "./ButtonGaleria";
 
 export default function AreaButtons(){
     return (
-        <>
-            <View>
-                <ButtonCamera></ButtonCamera>
-                <ButtonGaleria></ButtonGaleria>
-            </View>
-        </>
+        <View>
+            <ButtonCamera></ButtonCamera>
+            <ButtonGaleria></ButtonGaleria>
+        </View>
     )
 }

@@ -1,17 +1,15 @@
 import React from "react";
-import { View, Text} from 'react-native';
-import CardImagem from "./CardImagem";
+import {View, Text, FlatList} from 'react-native';
+import Collections from "../../context/CollectionsContext";
 
-export default function ContainerImages(){
+
+export default function ContainerImages({ collectionName }){
     return (
-        <>
+        <View>
             <View>
-                <View>
-                    <Text>Galeria Segura de Imagens</Text>
-                </View>
-                <CardImagem></CardImagem>
+                <Text>Galeria Segura de Imagens</Text>
             </View>
-
-        </>
+            {/*<FlatList data={images_list} renderItem={} />*/}
+        </View>
     )
 }

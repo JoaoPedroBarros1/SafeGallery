@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import HeaderComponent from "../components/HeaderComponent";
 import {Pressable, FlatList, SafeAreaView, Image, Text, View} from "react-native";
 
-import Collections from "../context/CollectionsContext";
+import {Collections} from "../context/CollectionsContext";
 
 
 export default function CollectionScreen({ navigation }){
@@ -19,7 +19,7 @@ export default function CollectionScreen({ navigation }){
                 renderItem={({item}) =>
                     <Pressable
                         onPressOut={() => navigation.navigate("Gallery", {collection: item.name})}
-                        style={{flex: 1, aspectRatio: 1, position: 'relative'}}
+                        style={{flex: 1, aspectRatio: 1, maxWidth: '50%', position: 'relative'}}
                     >
                         <Image
                             source={{uri: item.images[0]}}
