@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useState, useContext} from "react";
 import {FAB, Portal} from "react-native-paper";
 
 import pickImageCamera from "./ButtonCamera";
@@ -6,8 +6,7 @@ import pickImageGaleria from "./ButtonGaleria";
 import {Collections} from "../../context/CollectionsContext";
 
 export default function AreaButtons({ collectionName }){
-    const { addImage } = useContext(Collections)
-
+    const Collection = useContext(Collections)
     const [state, setState] = useState({open: false})
 
     const onStateChange = ({open}) => setState({open})
@@ -21,12 +20,12 @@ export default function AreaButtons({ collectionName }){
                     {
                         icon: 'camera',
                         label: 'Tirar foto',
-                        onPress: () => {addImage(collectionName, pickImageCamera())}
+                        onPress: () => {pickImageCamera(collectionName, Collection.addImage)}
                     },
                     {
                         icon: 'image-multiple',
                         label: 'Ad. da galeria',
-                        onPress: () => {addImage(collectionName, pickImageGaleria())}
+                        onPress: () => {pickImageGaleria(collectionName, Collection.addImage)}
                     }
                 ]}
                 icon={open ? 'close' : 'plus'}
