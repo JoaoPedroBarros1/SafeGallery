@@ -17,11 +17,14 @@ export const styles = StyleSheet.create({
         top: 0
     },
 
-    cardText: {
+    cardView: {
         position: 'absolute',
-        left: '50%',
         bottom: 10,
-        transform: [{translateX: '-50%'}],
+        alignSelf: "center"
+    },
+
+    cardText: {
+        textAlign: 'center',
         color: '#eee',
         fontSize: 25
     }

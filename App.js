@@ -1,9 +1,9 @@
-import {NavigationContainer} from "@react-navigation/native";
-import {createStackNavigator} from '@react-navigation/stack';
 import React from "react";
 
-import {PaperProvider} from "react-native-paper";
+import {NavigationContainer} from "@react-navigation/native";
+import {createStackNavigator} from '@react-navigation/stack';
 
+import {PaperProvider} from "react-native-paper";
 import {CollectionsProvider} from "./context/CollectionsContext";
 
 import LockScreen from "./screens/LockScreen";
@@ -21,7 +21,7 @@ export default function App() {
             <CollectionsProvider>
                 <NavigationContainer>
                     <Stack.Navigator
-                        /*screenOptions={{headerShown: false}}*/
+                        screenOptions={{headerShown: false}}
                         initialRouteName={"Collections"}
                     >
                         <Stack.Screen

@@ -20,6 +20,9 @@ function CollectionsProvider({ children }) {
 
     function addImage(name, url) {
         let temp_column = [...collections]
+        if (!name) {
+            const name = "Outros"
+        }
 
         for (let i = 0; i < collections.length; i++) {
             if (name === collections[i].name) {

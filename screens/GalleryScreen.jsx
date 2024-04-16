@@ -1,5 +1,5 @@
 import React from "react";
-import {ScrollView, SafeAreaView} from 'react-native';
+import {SafeAreaView} from 'react-native';
 
 import HeaderComponent from "../components/HeaderComponent";
 
@@ -8,17 +8,13 @@ import AreaButtons from "../components/gallery/AreaButtons";
 
 
 export default function GalleryScreen({ route, navigation }){
-    // Esse parâmetro serve para passar qual galeria que está aberta, é importante, não apague
     const {collection} = route.params
 
     return (
-        <SafeAreaView>
-            <ScrollView>
-                 <HeaderComponent navigation={navigation} />
-                 <ContainerImages collectionName={collection} />
-                 <AreaButtons/>
-            </ScrollView>
-
+        <SafeAreaView style={{flex: 1}}>
+            <HeaderComponent navigation={navigation} />
+            <AreaButtons collectionName={collection} />
+            <ContainerImages collectionName={collection} />
         </SafeAreaView>
     )
 }

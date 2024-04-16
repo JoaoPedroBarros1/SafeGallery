@@ -7,7 +7,7 @@ import {Collections} from "../context/CollectionsContext";
 import {styles} from "../styles/collectionsStyle";
 
 
-export default function CollectionScreen({ navigation }){
+export default function CollectionScreen({ navigation }) {
     const {collections} = useContext(Collections)
 
     return (
@@ -30,7 +30,9 @@ export default function CollectionScreen({ navigation }){
                         <View
                             style={[styles.cardSize, {backgroundColor: 'rgba(0,0,0,0.65)'}]}
                         />
-                        <Text style={styles.cardText}>{item.name}</Text>
+                        <View style={styles.cardView}>
+                            <Text style={styles.cardText}>{item.name}</Text>
+                        </View>
                     </Pressable>
                 }
                 />
