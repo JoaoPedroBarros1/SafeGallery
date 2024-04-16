@@ -4,6 +4,8 @@ import {Pressable, FlatList, SafeAreaView, Image, Text, View} from "react-native
 
 import {Collections} from "../context/CollectionsContext";
 
+import {styles} from "../styles/collectionsStyle";
+
 
 export default function CollectionScreen({ navigation }){
     const {collections} = useContext(Collections)
@@ -19,36 +21,16 @@ export default function CollectionScreen({ navigation }){
                 renderItem={({item}) =>
                     <Pressable
                         onPressOut={() => navigation.navigate("Gallery", {collection: item.name})}
-                        style={{flex: 1, aspectRatio: 1, maxWidth: '50%', position: 'relative'}}
+                        style={styles.listButton}
                     >
                         <Image
                             source={{uri: item.images[0]}}
-                            style={{width: '100%',
-                                aspectRatio: 1,
-                                borderRadius: 30,
-                                position: 'absolute',
-                                left: 0,
-                                top: 0
-                        }}
+                            style={styles.cardSize}
                         />
                         <View
-                            style={{width: '100%',
-                                aspectRatio: 1,
-                                borderRadius: 30,
-                                position: 'absolute',
-                                left: 0,
-                                top: 0,
-                                backgroundColor: 'rgba(0,0,0,0.65)'
-                        }}
+                            style={[styles.cardSize, {backgroundColor: 'rgba(0,0,0,0.65)'}]}
                         />
-                        <Text style={{
-                            position: 'absolute',
-                            left: '50%',
-                            bottom: 10,
-                            transform: [{translateX: '-50%'}],
-                            color: '#eee',
-                            fontSize: 25
-                        }}>{item.name}</Text>
+                        <Text style={styles.cardText}>{item.name}</Text>
                     </Pressable>
                 }
                 />
