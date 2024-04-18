@@ -7,14 +7,12 @@ import ContainerImages from "../components/gallery/ContainerImages";
 import AreaButtons from "../components/gallery/AreaButtons";
 
 
-export default function GalleryScreen({ route, navigation }){
-    const {collection} = route.params
-
+export default function GalleryScreen({ navigation }){
     return (
         <SafeAreaView style={{flex: 1}}>
             <HeaderComponent navigation={navigation} />
-            <AreaButtons collectionName={collection} />
-            <ContainerImages collectionName={collection} />
+            <ContainerImages />
+            <AreaButtons />
         </SafeAreaView>
     )
 }

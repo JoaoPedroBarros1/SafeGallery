@@ -8,7 +8,7 @@ import {styles} from "../styles/collectionsStyle";
 
 
 export default function CollectionScreen({ navigation }) {
-    const {collections} = useContext(Collections)
+    const {collections, setCurrentCollection} = useContext(Collections)
 
     return (
         <SafeAreaView>
@@ -20,7 +20,10 @@ export default function CollectionScreen({ navigation }) {
                 data={collections}
                 renderItem={({item}) =>
                     <Pressable
-                        onPressOut={() => navigation.navigate("Gallery", {collection: item.name})}
+                        onPressOut={() => {
+                            navigation.navigate("Gallery")
+                            setCurrentCollection(item.name)
+                        }}
                         style={styles.listButton}
                     >
                         <Image
