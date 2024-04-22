@@ -11,10 +11,9 @@ export const styles = StyleSheet.create({
         backgroundColor: "blue",
         padding: 15,
         borderRadius: 10,
-        width: 90,
-        height: 60,
         justifyContent: 'center',
         alignItems: 'center',
+        maxWidth: 150
     },
     buttonText: {
         color: "white",
@@ -28,4 +27,9 @@ export const styles = StyleSheet.create({
         margin: 20,
         marginLeft: 40,
     },
+    fab: {
+        position: 'absolute',
+        bottom: 15,
+        right: 15
+    }
 });
