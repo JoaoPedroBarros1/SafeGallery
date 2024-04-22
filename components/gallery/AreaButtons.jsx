@@ -6,7 +6,7 @@ import {Collections} from "../../context/CollectionsContext";
 import * as ImagePicker from "expo-image-picker";
 
 export default function AreaButtons() {
-    const { currentCollection, addImage } = useContext(Collections)
+    const Collection = useContext(Collections)
     const [state, setState] = useState({open: false})
 
     const onStateChange = ({open}) => setState({open})
@@ -27,8 +27,7 @@ export default function AreaButtons() {
             quality: 1,
         });
         if (!result.canceled) {
-            alert("Da galeria")
-            addImage(currentCollection, result.assets[0].uri)
+            Collection.addImage(Collection.currentCollection, result.assets[0].uri)
         }
     }
 
@@ -45,8 +44,7 @@ export default function AreaButtons() {
             quality: 1,
         });
         if (!result.canceled) {
-            alert("Printing")
-            addImage(currentCollection, result.assets[0].uri)
+            Collection.addImage(Collection.currentCollection, result.assets[0].uri)
         }
     }
 

@@ -22,7 +22,7 @@ export default function App() {
                 <NavigationContainer>
                     <Stack.Navigator
                         screenOptions={{headerShown: false}}
-                        initialRouteName={"Collections"}
+                        initialRouteName={"Lockscreen"}
                     >
                         <Stack.Screen
                             name={"Lockscreen"}

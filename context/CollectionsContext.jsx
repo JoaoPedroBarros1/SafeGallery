@@ -1,4 +1,4 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 
 
 const Collections = createContext({})
@@ -21,13 +21,15 @@ function CollectionsProvider({ children }) {
 
     function addImage(name, url) {
         let temp_column = [...collections]
-        if (!name) {
-            name = "Outros"
+        let currentName = ""
+        if (name) {
+            currentName = name
+        } else {
+            currentName = "Outros"
         }
 
-        alert("Pushing to")
         for (let i = 0; i < collections.length; i++) {
-            if (name === collections[i].name) {
+            if (currentName === collections[i].name) {
                 temp_column[i].images.push(url)
                 break
             }

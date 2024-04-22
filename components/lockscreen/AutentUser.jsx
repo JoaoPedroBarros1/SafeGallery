@@ -14,7 +14,7 @@ export default async function AutentUser(navigation) {
                 fallbackLabel: "Use senha",
             });
             if (success) {
-                navigation.navigate("Gallery")
+                navigation.navigate("Collections")
             } else {
                 Vibration.vibrate([1000, 500, 1000]);
 

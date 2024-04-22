@@ -21,8 +21,8 @@ export default function CollectionScreen({ navigation }) {
                 renderItem={({item}) =>
                     <Pressable
                         onPressOut={() => {
-                            navigation.navigate("Gallery")
                             setCurrentCollection(item.name)
+                            navigation.navigate("Gallery")
                         }}
                         style={styles.listButton}
                     >

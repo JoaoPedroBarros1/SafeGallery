@@ -16,7 +16,7 @@ export default function ContainerImages() {
         } else {
             setImagesList(Object.values(collectionsMap).flat())
         }
-    }, []);
+    }, [currentCollection]);
 
     return (
         <FlatList
